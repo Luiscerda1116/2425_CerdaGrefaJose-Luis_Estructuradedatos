@@ -1,0 +1,127 @@
+using System;
+
+/// <summary>
+/// Clase abstracta base para figuras geométricas
+/// </summary>
+public abstract class FiguraGeometrica
+{
+    /// <summary>
+    /// Método abstracto para calcular el área
+    /// </summary>
+    /// <returns>Área de la figura</returns>
+    public abstract double CalcularArea();
+
+    /// <summary>
+    /// Método abstracto para calcular el perímetro
+    /// </summary>
+    /// <returns>Perímetro de la figura</returns>
+    public abstract double CalcularPerimetro();
+}
+
+/// <summary>
+/// Clase que representa un Círculo
+/// </summary>
+public class Circulo : FiguraGeometrica
+{
+    // Radio del círculo
+    private double radio;
+
+    /// <summary>
+    /// Constructor de Círculo
+    /// </summary>
+    /// <param name="radioCirculo">Radio del círculo</param>
+    public Circulo(double radioCirculo)
+    {
+        // Validación para evitar radios negativos
+        if (radioCirculo <= 0)
+        {
+            throw new ArgumentException("El radio debe ser positivo");
+        }
+        radio = radioCirculo;
+    }
+
+    /// <summary>
+    /// Calcula el área del círculo usando la fórmula π * r²
+    /// </summary>
+    /// <returns>Área del círculo</returns>
+    public override double CalcularArea()
+    {
+        return Math.PI * radio * radio;
+    }
+
+    /// <summary>
+    /// Calcula el perímetro del círculo usando la fórmula 2 * π * r
+    /// </summary>
+    /// <returns>Perímetro del círculo</returns>
+    public override double CalcularPerimetro()
+    {
+        return 2 * Math.PI * radio;
+    }
+}
+
+/// <summary>
+/// Clase que representa un Rectángulo
+/// </summary>
+public class Rectangulo : FiguraGeometrica
+{
+    // Ancho del rectángulo
+    private double ancho;
+    
+    // Altura del rectángulo
+    private double altura;
+
+    /// <summary>
+    /// Constructor de Rectángulo
+    /// </summary>
+    /// <param name="anchoRectangulo">Ancho del rectángulo</param>
+    /// <param name="alturaRectangulo">Altura del rectángulo</param>
+    public Rectangulo(double anchoRectangulo, double alturaRectangulo)
+    {
+        // Validación para evitar dimensiones negativas
+        if (anchoRectangulo <= 0 || alturaRectangulo <= 0)
+        {
+            throw new ArgumentException("Las dimensiones deben ser positivas");
+        }
+        ancho = anchoRectangulo;
+        altura = alturaRectangulo;
+    }
+
+    /// <summary>
+    /// Calcula el área del rectángulo usando la fórmula ancho * altura
+    /// </summary>
+    /// <returns>Área del rectángulo</returns>
+    public override double CalcularArea()
+    {
+        return ancho * altura;
+    }
+
+    /// <summary>
+    /// Calcula el perímetro del rectángulo usando la fórmula 2 * (ancho + altura)
+    /// </summary>
+    /// <returns>Perímetro del rectángulo</returns>
+    public override double CalcularPerimetro()
+    {
+        return 2 * (ancho + altura);
+    }
+}
+
+/// <summary>
+/// Clase de demostración para usar las figuras geométricas
+/// </summary>
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Ejemplo de uso de Círculo
+        Circulo miCirculo = new Circulo(5);
+        Console.WriteLine("Círculo:");
+        Console.WriteLine($"Área: {miCirculo.CalcularArea():F2}");
+        Console.WriteLine($"Perímetro: {miCirculo.CalcularPerimetro():F2}");
+
+        // Ejemplo de uso de Rectángulo
+        Rectangulo miRectangulo = new Rectangulo(4, 6);
+        Console.WriteLine("\nRectángulo:");
+        Console.WriteLine($"Área: {miRectangulo.CalcularArea():F2}");
+        Console.WriteLine($"Perímetro: {miRectangulo.CalcularPerimetro():F2}");
+    }
+}
