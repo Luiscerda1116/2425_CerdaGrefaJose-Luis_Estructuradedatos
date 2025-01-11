@@ -1,0 +1,40 @@
+=== INICIANDO PRUEBAS DE AGENDA TELEFÓNICA ===
+
+1. Agregando contactos de prueba...
+✓ Contactos agregados exitosamente
+
+2. Listando todos los contactos:
+
+Nombre: Juan Pérez
+Teléfono: 099123456
+Email: juan@email.com
+Dirección: Av. Principal 123
+------------------------------
+
+Nombre: María López
+Teléfono: 098765432
+Email: maria@email.com
+Dirección: Calle 456
+------------------------------
+
+3. Buscando contacto por teléfono...
+✓ Contacto encontrado:
+
+Nombre: Juan Pérez
+Teléfono: 099123456
+Email: juan@email.com
+Dirección: Av. Principal 123
+------------------------------
+
+4. Eliminando contacto...
+✓ Contacto eliminado exitosamente
+
+5. Lista final de contactos:
+
+Nombre: Juan Pérez
+Teléfono: 099123456
+Email: juan@email.com
+Dirección: Av. Principal 123
+------------------------------
+
+=== PRUEBAS COMPLETADAS EXITOSAMENTE ===
